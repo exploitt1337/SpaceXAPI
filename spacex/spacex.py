@@ -23,7 +23,7 @@ class SpaceXAPI:
 if __name__ == '__main__':
     spacex = SpaceXAPI()
     request_type = input("Enter type (offline/online): ")
-    amount = float(input("Enter amount: "))
+    amount = int(input("Enter amount: "))
     response = spacex.generate(request_type, amount)
     
     if not response.get('error'):
