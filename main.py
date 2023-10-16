@@ -30,7 +30,7 @@ async def generate(ctx, request_type, amount):
 @client.command()
 async def balance(ctx):
     balance = spacex.balance()
-    await ctx.send(balance['balance'] + "$")
+    await ctx.send(f"{balance['balance']} $")
 
 Thread(target=sellix.run).start()
 client.run(bot_token, reconnect=True)
