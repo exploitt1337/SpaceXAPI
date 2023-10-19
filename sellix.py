@@ -22,14 +22,14 @@ def generate_offline():
     data = request.get_json()['data']
     response = webhook.generate_key('offline', data['quantity'])
     key, url = response['key'], response['url']
-    return jsonify({"key": key, "url": url})
+    return str({"key": key, "url": url})
 
 @app.route('/online', methods=['POST'])
 def generate_online():
     data = request.get_json()['data']
     response = webhook.generate_key('online', data['quantity'])
     key, url = response['key'], response['url']
-    return jsonify({"key": key, "url": url})
+    return str({"key": key, "url": url})
 
 def run():
     app.run(host="0.0.0.0", port=port)
